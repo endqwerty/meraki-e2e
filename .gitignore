@@ -119,6 +119,7 @@ dist
 
 
 # cypress
-cypress/videos
+cypress/videos/
 **/*.mp4
 reports/
+cypress/screenshots/
