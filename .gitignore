@@ -121,3 +121,4 @@ dist
 # cypress
 cypress/videos
 **/*.mp4
+reports/

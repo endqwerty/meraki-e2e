@@ -10,3 +10,7 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1.17
+        with:
+          files: reports/**/*.xml
