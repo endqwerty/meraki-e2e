@@ -1,0 +1,49 @@
+{
+  "name": "airtable-e2e",
+  "author": "Daniel Yang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "lint": "eslint */**/*.{js,ts,tsx} --quiet --fix",
+    "prepare": "husky install",
+    "cypress:open": "cypress open",
+    "cypress:test": "cypress run",
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/endqwerty/airtable-e2e.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/endqwerty/airtable-e2e/issues"
+  },
+  "homepage": "https://github.com/endqwerty/airtable-e2e#readme",
+  "devDependencies": {
+    "@types/node": "^15.6.1",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "cypress": "^7.4.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "ts-node": "^10.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.js": "eslint --cache --fix"
+  }
+}
