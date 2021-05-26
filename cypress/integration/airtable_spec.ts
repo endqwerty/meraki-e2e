@@ -36,7 +36,6 @@ describe('Onboarding', () => {
     }).click();
     cy.findByRole('list', {
       name: /base collaborators/i,
-      timeout: 10000,
     }).as('list');
     cy.get('@list').findByRole('listitem').should('contain.text', `${friendEmailId}@mailinator.com`);
     cy.get('@list').findByRole('listitem').findByRole('button').should('contain.text', 'Editor');
