@@ -3,5 +3,6 @@
   "reporterOptions": {
     "mochaFile": "./reports/test-results.xml"
   },
-  "defaultCommandTimeout": 10000
+  "defaultCommandTimeout": 10000,
+  "projectId": "8an3cv"
 }
