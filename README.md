@@ -42,7 +42,13 @@
 
 ## Run Tests
 
-`npm run tests`
+`npm run test`
 
 
-If uploaded to Github, Github actions will run tests and record the results
+## CI/CD
+
+Github action:
+
+* set to Node 16.x
+* set to NPM 6.x
+* executes and stores results in junit format
