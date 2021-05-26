@@ -1,6 +1,6 @@
 # Airtable E2E with Cypress
 
-[Github](https://github.com/endqwerty/airtable-e2e) Repository
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/endqwerty/airtable-e2e/End-to-end%20tests)](https://github.com/endqwerty/airtable-e2e)
 
 
 # Overview
