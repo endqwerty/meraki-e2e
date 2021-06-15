@@ -1,5 +1,5 @@
 {
-  "name": "airtable-e2e",
+  "name": "meraki-e2e",
   "author": "Daniel Yang",
   "version": "1.0.0",
   "description": "",
@@ -16,13 +16,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/endqwerty/airtable-e2e.git"
+    "url": "git+https://github.com/endqwerty/meraki-e2e.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/endqwerty/airtable-e2e/issues"
+    "url": "https://github.com/endqwerty/meraki-e2e/issues"
   },
-  "homepage": "https://github.com/endqwerty/airtable-e2e#readme",
+  "homepage": "https://github.com/endqwerty/meraki-e2e#readme",
   "devDependencies": {
     "@testing-library/cypress": "^7.0.6",
     "@types/node": "^15.6.1",
