@@ -26,13 +26,14 @@ on this
 ### Imagine if this was a large app serving 100s of thousands of customers.
 
 * In black-box testing, there are limited areas where the user can influence the app.
-*
+  * A critical portion of testing would be in performance testing to ensure the server can handle lots of users at scale
 * However, with white-box testing, there are many variables which can be modified to ensure the app works as intended for the end-user
+  * Variations in data come from variations in the data sent by the API
   * Guaranteeing that the data is fetched in an efficient manner is critical.
   * The data needs to be parsed and edge cases such as null/empty values accounted for.
   * If the number of devices exceeds payload limits, then lazy loading or other data retrival methods are required.
     * Tests needs to verify the maximum data sets that can be processed by the webpages, specifically the maximum number of devices capable of being processed at the same time.
-* Finally, regardless of black or white-box testing, there should be security validations against the endpoints used by this app.
+* Finally, regardless of black or white-box testing, there should be security validations against the endpoints for the API
 ## Tools Used
 
 * Cypress
