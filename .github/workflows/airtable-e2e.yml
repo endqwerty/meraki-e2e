@@ -17,6 +17,7 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_MERAKI_API_KEY: ${{ secrets.CYPRESS_MERAKI_API_KEY }}
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1.17
         with:
