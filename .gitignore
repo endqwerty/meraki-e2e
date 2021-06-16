@@ -123,3 +123,4 @@ cypress/videos/
 **/*.mp4
 reports/
 cypress/screenshots/
+cypress.env.json

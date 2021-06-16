@@ -4,7 +4,9 @@ describe('new suite', () => {
     cy.clearLocalStorage();
   });
   it('new test', () => {
-    cy.visit('https://google.com');
-    expect(true === true);
+    cy.visit('https://meraki-web-test-v2.herokuapp.com');
+    cy.authenticate();
+    cy.verifyDevicesList();
+    // cy.verifyDeviceDetails();
   });
 });

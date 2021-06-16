@@ -1,34 +1,44 @@
 /* eslint-disable @typescript-eslint/no-namespace */
-import fetch from 'node-fetch';
 export {};
 
 declare global {
   namespace Cypress {
     interface Chainable {
       /**
-       * Custom command to click a link based on label
-       * @example cy.clickLink('greeting')
+       * Sets the api key and submits
+       * @example cy.authenticate()
        */
-      clickLink(label: string): Chainable<JQuery<HTMLAnchorElement>>;
+      authenticate(): void;
 
-      fetchInviteFromEmail(emailId: string): string;
+      /**
+       * Show the devices
+       * @example cy.listDevices()
+       */
+      verifyDevicesList(): void;
+
+      verifyDeviceDetails(): void;
     }
   }
 }
 
-Cypress.Commands.add('clickLink', (label) => {
-  return cy.get('a').contains(label).click();
+Cypress.Commands.add('authenticate', () => {
+  cy.get('[type="text"]').type(Cypress.env('MERAKI_API_KEY'));
+  cy.get('[type="submit"]').click();
 });
 
-Cypress.Commands.add('fetchInviteFromEmail', async (emailId) => {
-  const inboxResponse = await fetch(`https://mailinator.com/api/v2/domains/public/inboxes/${emailId}/`, {
-    method: 'GET',
+Cypress.Commands.add('verifyDevicesList', () => {
+  cy.get('h1').should('contain.text', 'Devices');
+  const devices = cy.get('a .device');
+  devices.should('have.lengthOf.greaterThan', 1);
+  devices.each(($device, $index, $collection) => {
+    cy.wrap($device.find('.image')).should('be.visible');
+    cy.wrap($device.find('.details .name')).should('have.lengthOf.greaterThan', 0);
+    cy.wrap($device.find('.details')).contains(/(?:[0-9]{1,3}\.){3}[0-9]{1,3}/);
+    // validate mouseover events
+    // cy.wrap($device.find('.details')).trigger('mouseover');
   });
-  const inboxResponseJSON = await inboxResponse.json();
-  const messageID = inboxResponseJSON.msgs[0].id;
-  const messageResponse = await fetch(`https://mailinator.com/api/v2/domains/public/inboxes/${emailId}/messages/${messageID}`, {
-    method: 'GET',
-  });
-  const messageResponseJSON = await messageResponse.json();
-  return messageResponseJSON.clickablelinks[1];
+});
+
+Cypress.Commands.add('verifyDeviceDetails', () => {
+  cy.get('#device');
 });
